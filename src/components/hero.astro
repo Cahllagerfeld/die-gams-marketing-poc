@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import heroBackground from "../assets/hero-background.jpg";
+import AnimatedContent from "./hero/animated-content.svelte";
+import ScrollIndicator from "./hero/scroll-indicator.svelte";
+---
+
+<section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-warm-50">
+	<!-- Background image (static, optimized) -->
+	<div class="absolute inset-0 z-0">
+		<Image
+			src={heroBackground}
+			alt="Alpine mountain landscape"
+			format="webp"
+			quality={80}
+			widths={[640, 1024, 1920, 2560]}
+			sizes="100vw"
+			class="h-full w-full object-cover"
+			loading="eager"
+		/>
+		<!-- Gradient overlay for text readability -->
+		<div class="absolute inset-0 bg-black/50"></div>
+	</div>
+
+	<!-- Animated content (Svelte island) -->
+	<AnimatedContent client:load />
+
+	<!-- Scroll indicator (Svelte island) -->
+	<ScrollIndicator client:load />
+</section>

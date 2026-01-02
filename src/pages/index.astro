@@ -1,7 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/hero.astro";
+
+const seo = {
+	title: "Die Gams | Familienhotel in den Bayerischen Alpen",
+	description:
+		"Erleben Sie unvergessliche Momente im Hotel Die Gams in Oberstdorf. Wellness, Natur und echte Bergmomente für die ganze Familie.",
+	image: "/images/og-image.jpg",
+};
 ---
 
-<Layout>
-	<p>Test</p>
+<Layout seo={seo}>
+	<Hero />
 </Layout>
