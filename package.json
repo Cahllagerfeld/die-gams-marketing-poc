@@ -10,19 +10,20 @@
 		"preview": "astro preview"
 	},
 	"dependencies": {
-		"@astrojs/svelte": "^7.1.0",
-		"@tailwindcss/vite": "^4.1.11",
-		"astro": "^5.10.1",
+		"@astrojs/svelte": "^7.2.4",
+		"@tailwindcss/vite": "^4.1.18",
+		"astro": "^5.16.6",
 		"astro-icon": "^1.1.5",
-		"svelte": "^5.34.9",
-		"tailwindcss": "^4.1.11",
-		"typescript": "^5.8.3"
+		"motion": "^12.23.26",
+		"svelte": "^5.46.1",
+		"tailwindcss": "^4.1.18",
+		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
-		"lefthook": "^1.11.14",
-		"prettier": "^3.6.2",
+		"lefthook": "^2.0.13",
+		"prettier": "^3.7.4",
 		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-svelte": "^3.4.0",
-		"prettier-plugin-tailwindcss": "^0.6.13"
+		"prettier-plugin-svelte": "^3.4.1",
+		"prettier-plugin-tailwindcss": "^0.7.2"
 	}
 }
