@@ -1,5 +1,5 @@
 ---
-import WellnessCard from "./wellness-teaser/wellness-card.svelte";
+import ImageCard from "./ui/image-card.svelte";
 
 const features = [
 	{
@@ -36,7 +36,7 @@ const features = [
 		<!-- Feature Cards -->
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 			{features.map((feature, index) => (
-				<WellnessCard
+				<ImageCard
 					client:visible
 					title={feature.title}
 					description={feature.description}

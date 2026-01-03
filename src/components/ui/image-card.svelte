@@ -25,7 +25,7 @@
 		loading="lazy"
 	/>
 	<!-- Gradient overlay -->
-	<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+	<div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent"></div>
 	<!-- Text -->
 	<div class="absolute inset-x-0 bottom-0 p-6">
 		<h3 class="font-heading text-xl font-medium text-white md:text-2xl">{title}</h3>

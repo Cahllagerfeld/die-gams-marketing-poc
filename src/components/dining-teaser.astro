@@ -1,0 +1,72 @@
+---
+import ImageCard from "./ui/image-card.svelte";
+
+const offerings = [
+	{
+		title: "Restaurant",
+		description: "Regionale Küche & frische Zutaten",
+		image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=450&fit=crop",
+	},
+	{
+		title: "Frühstück",
+		description: "Der perfekte Start in den Tag",
+		image: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&h=450&fit=crop",
+	},
+	{
+		title: "GAMS N' ROSES",
+		description: "Aperitifs & Cocktails",
+		image: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&h=450&fit=crop",
+	},
+];
+---
+
+<section class="bg-warm-100 py-20 md:py-28 lg:py-32">
+	<div class="container mx-auto px-6">
+		<!-- Header -->
+		<div class="mb-12 text-center">
+			<p class="font-medium text-forest-700">Genussmomente im Allgäu</p>
+			<h2 class="font-heading mt-2 text-3xl text-gams-grey-900 md:text-4xl lg:text-5xl">
+				Kulinarik & Genuss
+			</h2>
+			<p class="mx-auto mt-4 max-w-2xl text-gams-grey-600">
+				Erleben Sie authentische Küche mit regionalen Zutaten aus dem Allgäu. Von unserem reichhaltigen Frühstücksbuffet über kreative Gerichte bis hin zu entspannten Abenden in der GAMS N' ROSES Bar.
+			</p>
+		</div>
+
+		<!-- Offering Cards -->
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+			{offerings.map((offering, index) => (
+				<ImageCard
+					client:visible
+					title={offering.title}
+					description={offering.description}
+					image={offering.image}
+					delay={index * 0.15}
+				/>
+			))}
+		</div>
+
+		<!-- CTA -->
+		<div class="mt-12 text-center">
+			<a
+				href="/dining"
+				class="inline-flex items-center gap-2 rounded-lg border border-forest-700 px-6 py-3 font-medium text-forest-700 transition-colors hover:bg-forest-700 hover:text-white"
+			>
+				Kulinarik entdecken
+				<svg
+					class="h-4 w-4"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					stroke-width="2"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M17 8l4 4m0 0l-4 4m4-4H3"
+					/>
+				</svg>
+			</a>
+		</div>
+	</div>
+</section>

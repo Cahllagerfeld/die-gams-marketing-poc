@@ -15,8 +15,8 @@
 - [x] **Hero** - Full-screen hero with logo, tagline, CTAs
 - [x] **Introduction** - Welcome text, brand story (2-3 sentences)
 - [x] **Rooms Teaser** - 3 category cards (Standard, Komfort, Premium) → `/rooms`
-- [x] **Wellness Teaser** - Split layout: pool, sauna, massages → `/wellness`
-- [ ] **Dining Teaser** - 2-3 cards: Restaurant, Breakfast, Bar → `/dining`
+- [x] **Wellness Teaser** - 3 cards: pool, sauna, massages → `/wellness`
+- [x] **Dining Teaser** - 3 cards: Restaurant, Breakfast, Bar → `/dining`
 - [ ] **Activities Teaser** - Grid of 4-6 activities, summer/winter → `/activities`
 - [ ] **Location** - Region info, attractions, map/scenic image
 - [ ] **Special Offers** - 2-3 seasonal deal cards
