@@ -1,0 +1,79 @@
+---
+import RoomCard from "./rooms-teaser/room-card.svelte";
+
+const rooms = [
+	{
+		image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop",
+		category: "Standard",
+		tagline: "Gemütlich & Funktional",
+		description: "Alles was Sie brauchen für einen erholsamen Aufenthalt in den Bergen.",
+		href: "/rooms#standard",
+	},
+	{
+		image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop",
+		category: "Komfort",
+		tagline: "Stilvoll & Geräumig",
+		description: "Mehr Platz, mehr Komfort — ideal für längere Aufenthalte.",
+		href: "/rooms#komfort",
+	},
+	{
+		image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop",
+		category: "Premium",
+		tagline: "Exklusiv & Großzügig",
+		description: "Unser Bestes: großzügige Räume mit erstklassiger Ausstattung.",
+		href: "/rooms#premium",
+	},
+];
+---
+
+<section class="bg-warm-100 py-20 md:py-28 lg:py-32">
+	<div class="mx-auto container px-6">
+		<!-- Header -->
+		<div class="mb-12 text-center">
+			<h2 class="font-heading text-3xl text-gams-grey-900 md:text-4xl lg:text-5xl">
+				Unsere Zimmer und Appartements
+			</h2>
+			<p class="mt-3 text-gams-grey-600">
+				Wohnbeispiele für jeden Geschmack
+			</p>
+		</div>
+
+		<!-- Room Cards Grid -->
+		<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+			{rooms.map((room, index) => (
+				<RoomCard
+					client:visible
+					image={room.image}
+					category={room.category}
+					tagline={room.tagline}
+					description={room.description}
+					href={room.href}
+					delay={index * 0.15}
+				/>
+			))}
+		</div>
+
+		<!-- Footer CTA -->
+		<div class="mt-12 text-center">
+			<a
+				href="/rooms"
+				class="inline-flex items-center gap-2 rounded-lg border border-forest-700 px-6 py-3 font-medium text-forest-700 transition-colors hover:bg-forest-700 hover:text-white"
+			>
+				Alle Appartements ansehen
+				<svg
+					class="h-4 w-4"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					stroke-width="2"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M17 8l4 4m0 0l-4 4m4-4H3"
+					/>
+				</svg>
+			</a>
+		</div>
+	</div>
+</section>
