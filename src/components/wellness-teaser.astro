@@ -1,0 +1,72 @@
+---
+import WellnessCard from "./wellness-teaser/wellness-card.svelte";
+
+const features = [
+	{
+		title: "Panorama-Pool",
+		description: "Solewasser mit Bergblick",
+		image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=450&fit=crop",
+	},
+	{
+		title: "Saunalandschaft",
+		description: "Finnische Sauna & Dampfbad",
+		image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&h=450&fit=crop",
+	},
+	{
+		title: "Massage",
+		description: "Wohltuende Treatments",
+		image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=450&fit=crop",
+	},
+];
+---
+
+<section class="bg-warm-50 py-20 md:py-28 lg:py-32">
+	<div class="container mx-auto px-6">
+		<!-- Header -->
+		<div class="mb-12 text-center">
+			<p class="font-medium text-forest-700">Für Körper, Geist und Seele</p>
+			<h2 class="font-heading mt-2 text-3xl text-gams-grey-900 md:text-4xl lg:text-5xl">
+				Wellness & Erholung
+			</h2>
+			<p class="mx-auto mt-4 max-w-2xl text-gams-grey-600">
+				Tanken Sie neue Energie in unserem Wellnessbereich — ob im Panorama-Pool mit Blick auf den Hirschberg, in der Saunalandschaft oder bei einer entspannenden Massage.
+			</p>
+		</div>
+
+		<!-- Feature Cards -->
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+			{features.map((feature, index) => (
+				<WellnessCard
+					client:visible
+					title={feature.title}
+					description={feature.description}
+					image={feature.image}
+					delay={index * 0.15}
+				/>
+			))}
+		</div>
+
+		<!-- CTA -->
+		<div class="mt-12 text-center">
+			<a
+				href="/wellness"
+				class="inline-flex items-center gap-2 rounded-lg border border-forest-700 px-6 py-3 font-medium text-forest-700 transition-colors hover:bg-forest-700 hover:text-white"
+			>
+				Wellness entdecken
+				<svg
+					class="h-4 w-4"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					stroke-width="2"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M17 8l4 4m0 0l-4 4m4-4H3"
+					/>
+				</svg>
+			</a>
+		</div>
+	</div>
+</section>
