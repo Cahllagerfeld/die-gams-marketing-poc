@@ -2,7 +2,7 @@
 
 ## Brand Overview
 
-Die Gams is a family hotel in the Bavarian Alps offering wellness, nature, and memorable mountain experiences.
+Die Gams is a Hotel Resoirt in the Bavarian Alps offering wellness, nature, and memorable mountain experiences.
 
 **Design Philosophy**: Elegant, warm, and inviting - blending traditional Alpine sophistication with cozy hospitality.
 
