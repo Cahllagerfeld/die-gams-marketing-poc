@@ -1,23 +1,25 @@
 ---
 import ImageCard from "./ui/image-card.svelte";
 
-const features = [
-	{
+const features = {
+	main: {
 		title: "Panorama-Pool",
 		description: "Solewasser mit Bergblick",
-		image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=450&fit=crop",
+		image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
 	},
-	{
-		title: "Saunalandschaft",
-		description: "Finnische Sauna & Dampfbad",
-		image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&h=450&fit=crop",
-	},
-	{
-		title: "Massage",
-		description: "Wohltuende Treatments",
-		image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=450&fit=crop",
-	},
-];
+	secondary: [
+		{
+			title: "Saunalandschaft",
+			description: "Finnische Sauna & Dampfbad",
+			image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&h=400&fit=crop",
+		},
+		{
+			title: "Massage",
+			description: "Wohltuende Treatments",
+			image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=400&fit=crop",
+		},
+	],
+};
 ---
 
 <section class="bg-warm-50 py-20 md:py-28 lg:py-32">
@@ -33,15 +35,29 @@ const features = [
 			</p>
 		</div>
 
-		<!-- Feature Cards -->
-		<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-			{features.map((feature, index) => (
+		<!-- Bento Grid -->
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-2">
+			<!-- Main feature - spans 2 columns and 2 rows on desktop -->
+			<div class="md:col-span-2 md:row-span-2">
+				<ImageCard
+					client:visible
+					title={features.main.title}
+					description={features.main.description}
+					image={features.main.image}
+					delay={0}
+					class="aspect-3/2 md:aspect-auto md:h-full"
+				/>
+			</div>
+
+			<!-- Secondary features - each takes one row -->
+			{features.secondary.map((feature, index) => (
 				<ImageCard
 					client:visible
 					title={feature.title}
 					description={feature.description}
 					image={feature.image}
-					delay={index * 0.15}
+					delay={0.15 + index * 0.1}
+					class="aspect-4/3 md:aspect-auto md:h-full"
 				/>
 			))}
 		</div>

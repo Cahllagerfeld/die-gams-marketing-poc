@@ -6,9 +6,10 @@
 		description: string;
 		image: string;
 		delay?: number;
+		class?: string;
 	}
 
-	let { title, description, image, delay = 0 }: Props = $props();
+	let { title, description, image, delay = 0, class: className = "" }: Props = $props();
 </script>
 
 <div
@@ -16,7 +17,7 @@
 		frames: { opacity: [0, 1], y: [30, 0] },
 		options: { duration: 0.6, delay, ease: "easeOut" },
 	})}
-	class="group relative aspect-4/3 overflow-hidden rounded-xl"
+	class="group relative aspect-4/3 overflow-hidden rounded-xl {className}"
 >
 	<img
 		src={image}
