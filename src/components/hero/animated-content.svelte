@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { motion } from "../../lib/motion.svelte";
+	import Divider from "../ui/divider.svelte";
 </script>
 
 <div class="relative z-10 mx-auto max-w-4xl px-6 py-24 text-center">
@@ -30,17 +31,7 @@
 	</h1>
 
 	<!-- Decorative divider -->
-	<div
-		{@attach motion({
-			frames: { opacity: [0, 1], scaleX: [0.5, 1] },
-			options: { duration: 0.6, delay: 0.35, ease: "easeOut" },
-		})}
-		class="mx-auto mb-8 flex items-center justify-center gap-3"
-	>
-		<span class="h-px w-10 bg-white/50 sm:w-16"></span>
-		<span class="h-1.5 w-1.5 rounded-full bg-white"></span>
-		<span class="h-px w-10 bg-white/50 sm:w-16"></span>
-	</div>
+	<Divider variant="light" delay={0.35} class="mb-8" />
 
 	<!-- Tagline -->
 	<p
