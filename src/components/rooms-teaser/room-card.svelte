@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { motion } from "../../lib/motion.svelte";
+	import Button from "../ui/button.svelte";
 
 	interface Props {
 		image: string;
@@ -36,20 +37,6 @@
 		<p class="text-gams-grey-600 mb-4 text-sm leading-relaxed">
 			{description}
 		</p>
-		<a
-			{href}
-			class="text-forest-700 hover:text-forest-500 inline-flex items-center gap-1 font-medium transition-colors"
-		>
-			Entdecken
-			<svg
-				class="h-4 w-4 transition-transform group-hover:translate-x-1"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke="currentColor"
-				stroke-width="2"
-			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-			</svg>
-		</a>
+		<Button {href} variant="link" icon="chevron">Entdecken</Button>
 	</div>
 </article>

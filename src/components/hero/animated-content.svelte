@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { motion } from "../../lib/motion.svelte";
 	import Divider from "../ui/divider.svelte";
+	import Button from "../ui/button.svelte";
 </script>
 
 <div class="relative z-10 mx-auto max-w-4xl px-6 py-24 text-center">
@@ -63,15 +64,7 @@
 		})}
 		class="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5"
 	>
-		<button
-			class="bg-forest-700 hover:bg-forest-500 rounded-lg px-7 py-3.5 text-sm font-medium text-white shadow-lg transition-colors duration-200 sm:px-9 sm:text-base"
-		>
-			Verfügbarkeit prüfen
-		</button>
-		<button
-			class="rounded-lg border border-white/50 px-7 py-3.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-200 hover:border-white hover:bg-white/20 sm:px-9 sm:text-base"
-		>
-			Entdecken
-		</button>
+		<Button variant="primary" size="lg">Verfügbarkeit prüfen</Button>
+		<Button variant="hero-secondary" size="lg">Entdecken</Button>
 	</div>
 </div>
