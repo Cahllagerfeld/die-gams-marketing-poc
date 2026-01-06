@@ -12,6 +12,8 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
 	},
-
+	image: {
+		domains: ["images.unsplash.com"],
+	},
 	integrations: [icon(), svelte()],
 });

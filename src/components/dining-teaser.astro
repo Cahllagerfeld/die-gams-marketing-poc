@@ -1,5 +1,6 @@
 ---
 import Button from "./ui/button.svelte";
+import { Image } from "astro:assets";
 
 const offerings = [
 	{
@@ -22,11 +23,14 @@ const offerings = [
 		<div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
 			<!-- Large atmospheric image -->
 			<div class="relative aspect-4/3 overflow-hidden rounded-xl lg:aspect-square">
-				<img
+				<Image
+					format="webp"
+					quality={80}
+					width={800}
+					height={100}
 					src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=800&fit=crop"
 					alt="Restaurant Atmosphäre"
 					class="h-full w-full object-cover"
-					loading="lazy"
 				/>
 			</div>
 
@@ -43,12 +47,16 @@ const offerings = [
 
 				<!-- Offerings list -->
 				<div class="mt-8 space-y-6">
-					{offerings.map((offering) => (
-						<div class="border-l-2 border-forest-700 pl-4">
-							<h3 class="font-heading font-semibold text-xl text-gams-grey-900">{offering.title}</h3>
-							<p class="mt-1 text-sm text-gams-grey-600">{offering.description}</p>
-						</div>
-					))}
+					{
+						offerings.map((offering) => (
+							<div class="border-l-2 border-forest-700 pl-4">
+								<h3 class="font-heading font-semibold text-xl text-gams-grey-900">
+									{offering.title}
+								</h3>
+								<p class="mt-1 text-sm text-gams-grey-600">{offering.description}</p>
+							</div>
+						))
+					}
 				</div>
 
 				<!-- CTA -->
